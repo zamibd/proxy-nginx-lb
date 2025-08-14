@@ -1,9 +1,11 @@
-#version: '3'
+
 services:
   nginx:
     image: nginx:latest
     container_name: multiport-proxy
     ports:
+      - "80:80"       # HTTP
+      - "443:443"     # HTTPS
       - "99:99"
       - "98:98"
       - "500:500"
